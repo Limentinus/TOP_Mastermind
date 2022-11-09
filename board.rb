@@ -1,4 +1,4 @@
-class board
+class Board
 
     def initialize
         @guess_holes = Array.new(4)
