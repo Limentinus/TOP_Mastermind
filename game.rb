@@ -8,4 +8,8 @@ class Game
   def play_game
     @codebreaker.
   end
+
+  def won?(code, guess)
+    code == guess
+  end
 end
