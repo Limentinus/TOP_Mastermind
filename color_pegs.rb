@@ -1,3 +1,4 @@
+# color methods for String class
 class String
   # colorization
   def black;          "\e[30m#{self}\e[0m" end
@@ -10,17 +11,10 @@ class String
   def gray;           "\e[37m#{self}\e[0m" end
 
 end
-  
 
+# Creates colored pegs
 class ColorPegs
-  attr_reader :red_peg
-  attr_reader :green_peg
-  attr_reader :brown_peg
-  attr_reader :blue_peg
-  attr_reader :magenta_peg
-  attr_reader :cyan_peg
-  attr_reader :gray_peg
-  attr_reader :black_peg
+  attr_reader :red_peg, :green_peg, :brown_peg, :blue_peg, :magenta_peg, :cyan_peg, :gray_peg, :black_peg
 
   def initialize
     @red_peg = '⬤'.red
@@ -32,7 +26,6 @@ class ColorPegs
     @gray_peg = '⬤'.gray
     @black_peg = '⬤'.black
   end
-    
 end
 
 test = ColorPegs.new
