@@ -1,3 +1,5 @@
+
+# displays all the information for the game 
 class Display
 
   def initialize
