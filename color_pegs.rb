@@ -14,7 +14,7 @@ end
 
 # Creates colored pegs
 class ColorPegs
-  attr_reader :red_peg, :green_peg, :yellow_peg, :blue_peg, :magenta_peg, :cyan_peg, :gray_peg, :black_peg
+  attr_reader :red_peg, :green_peg, :yellow_peg, :blue_peg, :magenta_peg, :cyan_peg, :gray_peg, :black_peg, :colors
 
   def initialize
     @red_peg = '⬤'.red
@@ -25,8 +25,8 @@ class ColorPegs
     @cyan_peg = '⬤'.cyan
     @gray_peg = '⬤'.gray
     @black_peg = '⬤'.black
+    @colors = [@red_peg, @green_peg, @brown_peg, @blue_peg, @magenta_peg, @cyan_peg]
   end
 end
 
-test = ColorPegs.new
-puts test.red_peg
+

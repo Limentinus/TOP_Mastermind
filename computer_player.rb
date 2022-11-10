@@ -1,7 +1,10 @@
+require_relative 'color_pegs.rb'
+
 class ComputerPlayer
+  attr_reader :code, :colors
   def initialize
     @code = []
-    @colors = [r, g, y, b, m, c]
+    @colors = ColorPegs.new.colors
   end
 
   def make_code
@@ -14,3 +17,8 @@ class ComputerPlayer
     
   end
 end
+
+test = ComputerPlayer.new
+test.make_code
+puts test.code
+
