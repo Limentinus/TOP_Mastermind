@@ -19,14 +19,17 @@ class ColorPegs
   def initialize
     @red_peg = '⬤'.red
     @green_peg = '⬤'.green
-    @brown_peg = '⬤'.yellow
+    @yellow_peg = '⬤'.yellow
     @blue_peg = '⬤'.blue
     @magenta_peg = '⬤'.magenta
     @cyan_peg = '⬤'.cyan
     @gray_peg = '⬤'.gray
     @black_peg = '⬤'.black
-    @colors = [@red_peg, @green_peg, @brown_peg, @blue_peg, @magenta_peg, @cyan_peg]
+    @colors = {'r' => @red_peg, 'g' => @green_peg, 'y' => @yellow_peg, 'b' => @blue_peg, 'm' => @magenta_peg, 'c' => @cyan_peg}
+
   end
+
+
 end
 
 

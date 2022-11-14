@@ -6,9 +6,10 @@ class HumanPlayer
     array = Array.new(4)
     guess = array.map do |color|
         puts "Guess color"
+        puts "r: red, g: green, b: blue, y: yellow, m: magenta, c: cyan"
         gets.chomp
     end
-    puts guess
+    return guess
   end
 
   def make_code
@@ -22,5 +23,5 @@ class HumanPlayer
 end
 
 
-test_player = HumanPlayer.new
-test_player.guess_code
+# test_player = HumanPlayer.new
+# test_player.guess_code
