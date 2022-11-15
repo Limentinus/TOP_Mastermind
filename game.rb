@@ -22,18 +22,20 @@ class Game
         @guess = @codebreaker.guess_code
         guess_colors = make_colors(@guess, @colors)
         print_board(guess_colors, @feedback)
-        if won?(@codemaker.code, @guess) 
+        if won?(@code, @guess) 
             puts "Congrats, you guessed the correct code: #{@guess}"
+            puts @code
             break
         elsif @guess == ['e','x','i','t']
             break
         else puts "That wasn't the correct code, try again."
+             puts @code
         end
     end
   end
 
   def won?(code, guess)
-    puts code == guess
+    code == guess
   end
 end
 
