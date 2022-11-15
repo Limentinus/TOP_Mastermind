@@ -12,6 +12,8 @@ class Game
     @codebreaker = codebreaker_class.new
     @code = @codemaker.make_code
     @colors = ColorPegs.new.colors
+    @black = ColorPegs.new.black_peg
+    @gray = ColorPegs.new.gray_peg
     @guess = []
     @feedback = []
   end
@@ -21,9 +23,11 @@ class Game
     loop do
       @guess = @codebreaker.guess_code
       guess_colors = make_colors(@guess, @colors)
+      make_feedback(@guess)
       print_board(guess_colors, @feedback)
       puts correct_colors(@guess)
       puts correct_place(@guess)
+      puts @feedback
       if won?
         puts "Congrats, you guessed the correct code: #{@guess}"
         puts @code
@@ -53,7 +57,17 @@ class Game
         correct += 1
       end
     end
-    return correct
+    correct
+  end
+
+  def make_feedback(guess)
+    @feedback = []
+    correct_place(guess).times do
+      @feedback << @black
+    end
+    (correct_colors(guess) - correct_place(guess)).times do
+      @feedback << @gray
+    end
   end
 
 
