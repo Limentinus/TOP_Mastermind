@@ -22,7 +22,9 @@ class Game
         @guess = @codebreaker.guess_code
         guess_colors = make_colors(@guess, @colors)
         print_board(guess_colors, @feedback)
-        if won?(@code, @guess) 
+        puts correct_colors(@guess)
+        puts correct_place(@guess)
+        if won?
             puts "Congrats, you guessed the correct code: #{@guess}"
             puts @code
             break
@@ -34,9 +36,27 @@ class Game
     end
   end
 
-  def won?(code, guess)
-    code == guess
+  def won?
+    @code == @guess
   end
+
+  def correct_colors(guess)
+    # method determins if a color code is pressent in the @code and then counts it
+    @code.intersection(guess).size
+  end
+
+  def correct_place(guess)
+    correct = 0
+    @code.each_with_index do |letter, index|
+        if letter == guess[index]
+            correct += 1
+        end
+    end
+    return correct
+  end
+
+        
+
 end
 
 test = Game.new(ComputerPlayer, HumanPlayer)
