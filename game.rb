@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'display.rb'
 require_relative 'human_player.rb'
 require_relative 'computer_player.rb'
@@ -25,7 +27,7 @@ class Game
       guess_colors = make_colors(@guess, @colors)
       make_feedback(@guess)
       print_board(guess_colors, @feedback)
-      puts correct_colors(@guess)
+      puts correct_colors(@code, @guess)
       puts correct_place(@guess)
       puts @feedback
       if won?
@@ -36,7 +38,8 @@ class Game
         break
       else
         puts "That wasn't the correct code, try again."
-        puts @code
+        puts "code: #{@code}"
+        puts "guess: #{@guess}"
       end
     end
   end
@@ -45,9 +48,20 @@ class Game
     @code == @guess
   end
 
-  def correct_colors(guess)
-    # method determins if a color code is pressent in the @code and then counts it
-    4 - @code.difference(guess).size
+  # checks how many colors match the code
+  def correct_colors(code, guess)
+    correct = 0
+    temp_code = code.clone
+    temp_guess = guess.clone
+    temp_guess.each_index do |index|
+      next unless temp_code.include?(temp_guess[index])
+
+      correct += 1
+      remove = temp_code.find_index(guess[index])
+      temp_code[remove] = '?'
+      temp_guess[index] = '?'
+    end
+    correct
   end
 
   def correct_place(guess)
@@ -65,7 +79,7 @@ class Game
     correct_place(guess).times do
       @feedback << @black
     end
-    (correct_colors(guess) - correct_place(guess)).times do
+    (correct_colors(@code, @guess) - correct_place(guess)).times do
       @feedback << @gray
     end
   end
@@ -74,4 +88,5 @@ class Game
 end
 
 test = Game.new(ComputerPlayer, HumanPlayer)
+# puts test.correct_colors(['r', 'r', 'b', 'r'], ['b', 'r', 'r', 'b'])
 test.play_game
