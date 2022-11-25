@@ -32,13 +32,11 @@ class Game
       puts @feedback
       if won?
         puts "Congrats, you guessed the correct code: #{@guess}"
-        puts @code
         break
       elsif @guess == ['e','x','i','t']
         break
       else
         puts "That wasn't the correct code, try again."
-        puts "code: #{@code}"
         puts "guess: #{@guess}"
       end
     end
