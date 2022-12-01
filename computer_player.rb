@@ -7,16 +7,14 @@ class ComputerPlayer
   end
 
   def make_code
-    code =[]
+    code = []
     4.times do 
       code << @colors.keys.sample
-    end  
-    return code
+    end
+    code
   end
 
   def guess_code
     
   end
 end
-
-

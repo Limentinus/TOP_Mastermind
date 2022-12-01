@@ -16,4 +16,3 @@ module Display
     puts "Feedback: | #{feedback[0]} | #{feedback[1]} | #{feedback[2]} | #{feedback[3]} |"
   end
 end
-

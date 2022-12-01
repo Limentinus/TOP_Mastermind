@@ -26,10 +26,5 @@ class ColorPegs
     @gray_peg = '⬤'.gray
     @black_peg = '⬤'.black
     @colors = {'r' => @red_peg, 'g' => @green_peg, 'y' => @yellow_peg, 'b' => @blue_peg, 'm' => @magenta_peg, 'c' => @cyan_peg}
-
   end
-
-
 end
-
-

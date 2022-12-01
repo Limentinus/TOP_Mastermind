@@ -18,4 +18,3 @@ class HumanPlayer
     puts code
   end
 end
-
