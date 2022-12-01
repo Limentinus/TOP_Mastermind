@@ -27,9 +27,6 @@ class Game
       guess_colors = make_colors(@guess, @colors)
       make_feedback(@guess)
       print_board(guess_colors, @feedback)
-      puts correct_colors(@code, @guess)
-      puts correct_place(@guess)
-      puts @feedback
       if won?
         puts "Congrats, you guessed the correct code: #{@guess}"
         break
