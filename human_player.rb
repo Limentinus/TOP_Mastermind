@@ -19,6 +19,3 @@ class HumanPlayer
   end
 end
 
-
-# test_player = HumanPlayer.new
-# test_player.guess_code

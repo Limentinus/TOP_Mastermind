@@ -83,5 +83,4 @@ class Game
 end
 
 test = Game.new(ComputerPlayer, HumanPlayer)
-# puts test.correct_colors(['r', 'r', 'b', 'r'], ['b', 'r', 'r', 'b'])
 test.play_game

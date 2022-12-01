@@ -19,7 +19,4 @@ class ComputerPlayer
   end
 end
 
-# test = ComputerPlayer.new
-# test.make_code
-
 
